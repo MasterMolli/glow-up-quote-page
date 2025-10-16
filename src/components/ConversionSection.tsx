@@ -14,17 +14,36 @@ const ConversionSection = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.phone) {
-      toast.error("Please fill in all required fields");
-      return;
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.phone) {
+    toast.error("Please fill in all required fields");
+    return;
+  }
+
+  try {
+    const res = await fetch("/api/submit-quote", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      toast.success("Quote request received! We'll contact you within 24 hours.");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      toast.error("Something went wrong. Please try again later.");
     }
-    
-    toast.success("Quote request received! We'll contact you within 24 hours.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    toast.error("Server error. Please try again later.");
+  }
+};
+
+
 
   return (
     <section id="quote-section" className="py-20 bg-gradient-to-b from-background to-muted/30">
