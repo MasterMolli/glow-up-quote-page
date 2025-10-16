@@ -5,19 +5,19 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Sarah Mitchell",
-      location: "Westchester, NY",
+      location: "Harrisburg, PA",
       text: "The team transformed our home into a holiday masterpiece! The attention to detail was incredible, and our neighbors can't stop talking about how beautiful it looks. Worth every penny!",
       rating: 5
     },
     {
       name: "David Chen",
-      location: "Greenwich, CT",
+      location: "Lancaster, PA",
       text: "As a business owner, I needed something that would draw attention without looking tacky. They delivered a sophisticated display that perfectly matched our brand. Sales increased 30% during the holiday season!",
       rating: 5
     },
     {
       name: "Emily Rodriguez",
-      location: "Summit, NJ",
+      location: "Lancaster, PA",
       text: "Best decision we made this year! From start to finish, the process was seamless. They handled everything—design, installation, and removal. No ladders, no stress, just pure holiday magic.",
       rating: 5
     }
