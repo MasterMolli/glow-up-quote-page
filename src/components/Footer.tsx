@@ -29,7 +29,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-medium">Service Area:</p>
-                <p className="text-primary-foreground/80">Lebanon Pa, Annville Pa, Hershey Pa</p>
+                <p className="text-primary-foreground/80">Lebanon, Annville, Hershey PA</p>
               </div>
             </div>
           </div>

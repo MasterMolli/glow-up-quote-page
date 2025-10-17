@@ -54,7 +54,7 @@ const ConversionSection = () => {
               Ready to Light Up Your Holidays in Style?
             </h2>
             <p className="text-lg text-muted-foreground">
-              Book early to secure your preferred installation date. Limited spots available for the 2024 season!
+              Book early to secure your preferred installation date. Limited spots available for the 2025-2026 season!
             </p>
           </div>
 
