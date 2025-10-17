@@ -18,7 +18,7 @@ const Testimonials = () => {
     {
       name: "Emily Rodriguez",
       location: "Lancaster, PA",
-      text: "Best decision we made this year! From start to finish, the process was seamless. They handled everything—design, installation, and removal. No ladders, no stress, just pure holiday magic.",
+      text: "Best decision we made this year! From start to finish, the process was seamless. They handled everything. design, installation, and removal. No ladders, no stress, just pure holiday magic.",
       rating: 5
     }
   ];
