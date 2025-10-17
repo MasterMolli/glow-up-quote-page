@@ -130,15 +130,15 @@ const ConversionSection = () => {
                 <div className="flex flex-col md:flex-row justify-center gap-4 text-sm">
                   <div className="flex items-center justify-center gap-2">
                     <Phone className="h-4 w-4 text-primary" />
-                    <span>(555) HOLIDAY</span>
+                    <span>(717) 376 4992</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <Mail className="h-4 w-4 text-primary" />
-                    <span>info@luxuryholidaylighting.com</span>
+                    <span>holidaylightinglux@gmail.com</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <MapPin className="h-4 w-4 text-primary" />
-                    <span>Tri-State Area</span>
+                    <span>Lebanon PA & Surrounding areas !</span>
                   </div>
                 </div>
               </div>

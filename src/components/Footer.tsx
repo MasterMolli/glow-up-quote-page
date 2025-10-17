@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h3 className="text-2xl font-bold mb-4">Luxury Holiday Lighting</h3>
             <p className="text-primary-foreground/80 mb-4">
-              Professional holiday lighting installation serving the Tri-State Area since 2015.
+              Professional holiday lighting installation serving Lebanon PA + !
             </p>
           </div>
 
@@ -21,15 +21,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>(555) HOLIDAY</span>
+                <span>(717) 376 4992</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>info@luxuryholidaylighting.com</span>
+                <span>holidaylightinglux@gmail.com</span>
               </div>
               <div>
                 <p className="font-medium">Service Area:</p>
-                <p className="text-primary-foreground/80">New York, New Jersey, Connecticut</p>
+                <p className="text-primary-foreground/80">Lebanon Pa, Annville Pa, Hershey Pa</p>
               </div>
             </div>
           </div>
