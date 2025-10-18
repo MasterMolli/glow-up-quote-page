@@ -140,7 +140,13 @@ const ConversionSection = () => {
                 <div className="flex flex-col md:flex-row justify-center gap-4 text-sm">
                   <div className="flex items-center justify-center gap-2">
                     <Phone className="h-4 w-4 text-primary" />
-                    <span>(717) 376 4992</span>
+                    <a 
+    href="tel:+17173764992" 
+    className="hover:underline text-foreground"
+  >
+    (717) 376 4992
+  </a>
+
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <Mail className="h-4 w-4 text-primary" />
