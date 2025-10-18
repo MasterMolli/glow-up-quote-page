@@ -138,23 +138,33 @@ const ConversionSection = () => {
                   Or reach out directly:
                 </p>
                 <div className="flex flex-col md:flex-row justify-center gap-4 text-sm">
+                  
+                  {/* ✅ Click-to-call */}
                   <div className="flex items-center justify-center gap-2">
                     <Phone className="h-4 w-4 text-primary" />
-                    <a 
-    href="tel:+17173764992" 
-    className="hover:underline text-foreground"
-  >
-    (717) 376 4992
-  </a>
-
+                    <a
+                      href="tel:+17173764992"
+                      className="text-foreground hover:text-secondary underline-offset-2 hover:underline active:opacity-80 transition"
+                    >
+                      (717) 376 4992
+                    </a>
                   </div>
+
+                  {/* ✅ Click-to-email */}
                   <div className="flex items-center justify-center gap-2">
                     <Mail className="h-4 w-4 text-primary" />
-                    <span>holidaylightinglux@gmail.com</span>
+                    <a
+                      href="mailto:holidaylightinglux@gmail.com"
+                      className="text-foreground hover:text-secondary underline-offset-2 hover:underline active:opacity-80 transition"
+                    >
+                      holidaylightinglux@gmail.com
+                    </a>
                   </div>
+
+                  {/* ✅ Location (static text) */}
                   <div className="flex items-center justify-center gap-2">
                     <MapPin className="h-4 w-4 text-primary" />
-                    <span>Lebanon PA & Surrounding areas !</span>
+                    <span>Lebanon PA & Surrounding areas!</span>
                   </div>
                 </div>
               </div>
