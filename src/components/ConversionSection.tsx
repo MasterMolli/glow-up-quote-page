@@ -14,36 +14,46 @@ const ConversionSection = () => {
     message: ""
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  if (!formData.name || !formData.email || !formData.phone) {
-    toast.error("Please fill in all required fields");
-    return;
-  }
-
-  try {
-    const res = await fetch("/api/submit-quote", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await res.json();
-
-    if (data.success) {
-      toast.success("Quote request received! We'll contact you within 24 hours.");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } else {
-      toast.error("Something went wrong. Please try again later.");
+    if (!formData.name || !formData.email || !formData.phone) {
+      toast.error("Please fill in all required fields");
+      return;
     }
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    toast.error("Server error. Please try again later.");
-  }
-};
 
+    const form = e.currentTarget;
+    const submitBtn = form.querySelector("button[type='submit']") as HTMLButtonElement;
+    submitBtn.disabled = true;
 
+    try {
+      const res = await fetch("/api/submit-quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("Quote request received! We'll contact you within 24 hours.");
+
+        // ✅ Clear input values (fix for mobile browsers)
+        form.reset();
+        setFormData({ name: "", email: "", phone: "", message: "" });
+
+        // ✅ Small delay before re-enabling button
+        setTimeout(() => (submitBtn.disabled = false), 2000);
+      } else {
+        toast.error("Something went wrong. Please try again later.");
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Server error. Please try again later.");
+      submitBtn.disabled = false;
+    }
+  };
 
   return (
     <section id="quote-section" className="py-20 bg-gradient-to-b from-background to-muted/30">
