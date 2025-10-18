@@ -38,11 +38,11 @@ const ConversionSection = () => {
       if (data.success) {
         toast.success("Quote request received! We'll contact you within 24 hours.");
 
-        // ✅ Clear input values (fix for mobile browsers)
+        // ✅ Clear input values for all devices
         form.reset();
         setFormData({ name: "", email: "", phone: "", message: "" });
 
-        // ✅ Small delay before re-enabling button
+        // Re-enable submit after delay
         setTimeout(() => (submitBtn.disabled = false), 2000);
       } else {
         toast.error("Something went wrong. Please try again later.");
@@ -107,7 +107,9 @@ const ConversionSection = () => {
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="(555) 123-4567"
+                    inputMode="tel"
+                    pattern="[0-9]{10}"
+                    placeholder="(717) 376-4992"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
@@ -137,7 +139,7 @@ const ConversionSection = () => {
                 <p className="text-center text-sm text-muted-foreground mb-4">
                   Or reach out directly:
                 </p>
-                <div className="flex flex-col md:flex-row justify-center gap-4 text-sm">
+                <div className="flex flex-col md:flex-row justify-center gap-4 text-sm select-none">
                   
                   {/* ✅ Click-to-call */}
                   <div className="flex items-center justify-center gap-2">
@@ -145,6 +147,7 @@ const ConversionSection = () => {
                     <a
                       href="tel:+17173764992"
                       className="text-foreground hover:text-secondary underline-offset-2 hover:underline active:opacity-80 transition"
+                      style={{ pointerEvents: "auto", cursor: "pointer", touchAction: "manipulation" }}
                     >
                       (717) 376 4992
                     </a>
@@ -156,12 +159,13 @@ const ConversionSection = () => {
                     <a
                       href="mailto:holidaylightinglux@gmail.com"
                       className="text-foreground hover:text-secondary underline-offset-2 hover:underline active:opacity-80 transition"
+                      style={{ pointerEvents: "auto", cursor: "pointer", touchAction: "manipulation" }}
                     >
                       holidaylightinglux@gmail.com
                     </a>
                   </div>
 
-                  {/* ✅ Location (static text) */}
+                  {/* ✅ Location */}
                   <div className="flex items-center justify-center gap-2">
                     <MapPin className="h-4 w-4 text-primary" />
                     <span>Lebanon PA & Surrounding areas!</span>
